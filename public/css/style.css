@@ -10294,8 +10294,7 @@ textarea.form-control {
   color:red;
 }
 
-@media (max-width:629px) {
-  img#optional {
-    display: none;
-  }
-}
+
+
+
+
