@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
   "use strict";
 
   //Contact
-  $('form.contact-form').submit(function () {
+  $('#sendmessagebtn').click(function () {
     var f = $(this).find('.form-group'),
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
@@ -104,15 +104,10 @@ async function postData(url = '', data = {}) {
 
   const response = await fetch(url, {
     method: 'POST', 
-    mode: 'cors', 
-    cache: 'no-cache',
-    credentials: 'same-origin', 
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
      
     },
-    redirect: 'follow', 
-    referrerPolicy: 'no-referrer',
     body: JSON.stringify(data)
   });
   return response.json(); 
@@ -124,7 +119,7 @@ function sendmail() {
   Email = document.getElementById("email").value;
   subject = document.getElementById("subject").value;
   message = document.getElementById("message").value;
-  body = "<h4>Name:" + Name + "<br>Email: " + Email + "<br>Subject: " + subject + "<br>Message: " + message + "</h4>";
+  body = "<h3>Someone contacted from https://femtronservices.com </h3> <br> <p>The details are as follows:</p><br><h4>Name:" + Name + "<br>Email: " + Email + "<br>Subject: " + subject + "<br>Message: " + message + "</h4>";
   requestbody = {
     "name": Name,
     "to": "contact@femtronservices.com",
